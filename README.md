@@ -1,3 +1,3 @@
 # Document
 
-https://hirokikojima.github.io/Document/
+https://hirokikojima.github.io/
