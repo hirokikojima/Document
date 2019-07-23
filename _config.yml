@@ -1,3 +1,16 @@
-theme: jekyll-theme-slate
+title: hirokikojima.github.io
+author: hiroki kojima
+
+lang: ja
+timezone: Asia/Tokyo
+
+exclude:
+  - Dockerfile
+  - README.md
+
+theme: minima
+
+github_username: hirokikojima
+
 plugins:
  - jekyll-sitemap

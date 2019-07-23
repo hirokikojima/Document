@@ -1,2 +1,13 @@
-# Headline
-[「グロースハック完全読本」まとめ](https://hirokikojima.github.io/entry/%E3%80%8C%E3%82%B0%E3%83%AD%E3%83%BC%E3%82%B9%E3%83%8F%E3%83%83%E3%82%AF%E5%AE%8C%E5%85%A8%E8%AA%AD%E6%9C%AC%E3%80%8D%E3%81%BE%E3%81%A8%E3%82%81)
+---
+layout: default
+---
+# お品書き
+
+<ul>
+{% for post in site.posts %}
+    <li>
+        <a href="{{ post.url }}">{{ post.date | date_to_long_string }} {{ post.title }}</a>
+        <p>{{ post.excerpt }}</p>
+    </li>
+{% endfor %}
+</ul>
