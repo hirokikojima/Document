@@ -1,0 +1,59 @@
+.page-content h2 {
+    color: #777;
+    font-weight: 600;
+    font-size: 1.6em;
+    border-bottom: 1px solid #ddd;
+    border-left: 12px solid #ddd;
+    padding-bottom: 0.1em;
+    padding-left: 0.2em;
+    margin-top: 2.2em;
+    margin-bottom: 2.4rem;
+}
+
+.page-content h3 {
+    font-weight: 400;
+    font-size:1.4em;
+    border-bottom: 1px solid #ddd;
+    margin-top:1.1em;
+    margin-bottom:1.2rem;
+}
+
+.page-content hr {
+    border-top: 1px dotted #ddd;
+    margin-top: 2.2em;
+}
+
+/**
+ * list
+ */
+.page-content ul.list {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    list-style: none;
+    margin: 0;
+}
+
+.page-content li.list-item {
+    border-top: 1px solid #ddd;
+    padding: 16px 18px;
+    position: relative;
+}
+
+.page-content li.list-item .title {
+    color: #333;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.page-content li.list-item .description {
+    color: #777;
+    font-size: 0.5rem;
+}
+
+.page-content li.list-item .post-date {
+    color: #777;
+    font-size: 0.5rem;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}

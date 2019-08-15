@@ -1,13 +1,18 @@
 ---
 layout: default
 ---
-# お品書き
+# 読んだ本
 
-<ul>
+<ul class="list">
 {% for post in site.posts %}
-    <li>
-        <a href="{{ post.url }}">{{ post.date | date_to_long_string }} {{ post.title }}</a>
-        <p>{{ post.excerpt }}</p>
+    <li class="list-item">
+        <a href="{{ post.url }}">
+            <div class="list-item-box">
+                <div class="title">{{ post.title }}</div>
+                <div class="description">{{ post.excerpt }}</div>
+                <div class="post-date">{{ post.date | date_to_long_string }}</div>
+            </div>
+        </a>
     </li>
 {% endfor %}
 </ul>
