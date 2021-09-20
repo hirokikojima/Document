@@ -1,23 +1,24 @@
-# Readme
-
-## Github Pages
+# hirokikojima.github.io
+## 1.URL
 https://hirokikojima.github.io/
 
-## Docker
+## 2.環境構築
+| 名前 | バージョン | 備考 |
+| --- | --- | --- |
+| [Node.js](https://nodejs.org/ja/) | v14.15.5 |  |
+| [yarn](https://yarnpkg.com/) | 1.22.10 | |
 
-### build
+## 3.実行 / ビルド
 ```
-docker build -t jekyll/hirokikojima.github.io:latest .
-```
+# パッケージインストール
+yarn install
 
-### run
-```
-docker run --rm -v %cd%:/srv/jekyll -p 4000:4000 -it  jekyll/hirokikojima.github.io:latest jekyll serve --watch
-```
+# 開発環境の起動
+yarn dev
 
-## Jekyll
+# ビルド
+yarn build
 
-### build
-```
-jekyll build
+# 反映
+yarn deploy
 ```
