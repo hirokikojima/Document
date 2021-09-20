@@ -19,6 +19,9 @@ yarn dev
 # ビルド
 yarn build
 
+# コンポーネント確認
+yarn storybook
+
 # 反映
 yarn deploy
 ```
