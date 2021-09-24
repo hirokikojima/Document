@@ -1,38 +1,21 @@
 import { GetStaticPaths, GetStaticPathsContext, GetStaticProps, GetStaticPropsContext, NextPage } from "next"
-import { PostList } from "../../types/Post"
+import NextLink from "../../components/atoms/NextLink"
+import { Pagination, Post } from "../../types"
+import RouteUtil from "../../utils/RouteUtil"
+import posts from "../../data/posts.json"
 
 export type Props = {
-  posts: PostList
+  posts: Post[],
+  pagination: Pagination
 }
 
 export const getStaticProps: GetStaticProps<Props> = (context: GetStaticPropsContext) => {
-  const posts = [
-    {
-      heading: 'タイトル１',
-      body: '本文'
-    },
-    {
-      heading: 'タイトル２',
-      body: '本文'
-    },
-    {
-      heading: 'タイトル３',
-      body: '本文'
-    },
-    {
-      heading: 'タイトル４',
-      body: '本文'
-    }
-  ]
-  
   return {
     props: {
-      posts: {
-        posts: posts,
-        pagination: {
-          pageCount: 1,
-          current: 1,
-        }
+      posts: posts,
+      pagination: {
+        pageCount: 1,
+        current: 1,
       }
     }
   }
@@ -40,20 +23,23 @@ export const getStaticProps: GetStaticProps<Props> = (context: GetStaticPropsCon
 
 const BlogListPage: NextPage<Props> = (props: Props) => {
   const {
-    posts
+    posts,
+    pagination
   } = props
-  
+
   return (
     <div>
       <h1>BlogList</h1>
       <ul>
         {
-          posts.posts.map((post) => {
-            <li>
-              <h2>{post.heading}</h2>
-              <p>{post.body}</p>
+          posts.map((post, idx) => (
+            <li key={idx}>
+              <NextLink href={RouteUtil.getBlogDetailPageUrl(post.heading)}>
+                <h2>{post.heading}</h2>
+                <p>{post.body}</p>
+              </NextLink>
             </li>
-          })
+          ))
         }
       </ul>
     </div>

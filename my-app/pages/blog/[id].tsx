@@ -1,36 +1,37 @@
 import { GetStaticPaths, GetStaticPathsContext, GetStaticProps, GetStaticPropsContext, NextPage } from "next"
+import { Post } from "../../types"
+import posts from "../../data/posts.json"
 
 export type Props = {
-  heading: string
+  post: Post
 }
 
 export const getStaticProps: GetStaticProps<Props> = (context: GetStaticPropsContext) => {
   const id = context.params!.id as string
-  
+  const post = posts.find(post => post.heading === id)
+
   return {
     props: {
-      heading: id
+      post: post!
     }
   }
 }
 
 export const getStaticPaths: GetStaticPaths = (context: GetStaticPathsContext) => {
+  const paths = posts.map(post => {
+    return { params: { id: post.heading } }
+  })
+  
   return {
-    paths: [
-      { params: { id: '「グロースハック完全読本」を読んだ' } },
-      { params: { id: '「監視入門」を読んだ' } },
-      { params: { id: '「正しいものを正しく作る」を読んだ' } },
-      { params: { id: '「クリーンアーキテクチャ」を読んだ' } },
-    ],
+    paths: paths,
     fallback: false
   }
 }
 
-const BlogDetailPage: NextPage<Props> = ({heading}) => (
+const BlogDetailPage: NextPage<Props> = ({post}) => (
   <div>
-    <h1>{heading}</h1>
-    <p>Example Text.Example Text.Example Text.</p>
-    <p>Example Text.Example Text.Example Text.</p>
+    <h1>{post.heading}</h1>
+    <p>{post.body}</p>
   </div>
 )
 
