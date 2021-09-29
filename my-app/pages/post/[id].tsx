@@ -1,6 +1,8 @@
-import { GetStaticPaths, GetStaticPathsContext, GetStaticProps, GetStaticPropsContext, NextPage } from "next"
+import { GetStaticPaths, GetStaticPathsContext, GetStaticProps, GetStaticPropsContext, NextPageWithLayout } from "next"
 import { Post } from "../../types"
 import posts from "../../data/posts.json"
+import React, { ReactElement } from "react"
+import DefaultLayout from "../../components/organisms/layouts/DefaultLayout"
 
 export type Props = {
   post: Post
@@ -28,11 +30,15 @@ export const getStaticPaths: GetStaticPaths = (context: GetStaticPathsContext) =
   }
 }
 
-const BlogDetailPage: NextPage<Props> = ({post}) => (
+const PostDetailPage: NextPageWithLayout<Props> = ({post}) => (
   <div>
     <h1>{post.heading}</h1>
     <p>{post.body}</p>
   </div>
 )
 
-export default BlogDetailPage
+PostDetailPage.getLayout = (page: ReactElement) => {
+  return (<DefaultLayout>{page}</DefaultLayout>)
+}
+
+export default PostDetailPage

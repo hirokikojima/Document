@@ -1,11 +1,10 @@
-import { GetStaticPaths, GetStaticPathsContext, GetStaticProps, GetStaticPropsContext, NextPage } from "next"
-import NextLink from "../../../components/atoms/NextLink"
-import { Pagination, Post } from "../../../types"
-import RouteUtil from "../../../utils/RouteUtil"
+import { NextPageWithLayout } from "next"
+import { Post } from "../../../types"
 import ApiClient from "../../../libs/ApiClient"
-import { useEffect, useState } from "react"
+import React, { ReactElement, useEffect, useState } from "react"
+import AdminLayout from "../../../components/organisms/layouts/AdminLayout"
 
-const BlogListPage: NextPage = () => {
+const AdminPostListPage: NextPageWithLayout = () => {
   const [list, setList] = useState<Post[]>([])
 
   useEffect(() => {
@@ -27,4 +26,8 @@ const BlogListPage: NextPage = () => {
   )
 }
 
-export default BlogListPage
+AdminPostListPage.getLayout = (page: ReactElement) => {
+  return (<AdminLayout>{page}</AdminLayout>)
+}
+
+export default AdminPostListPage

@@ -1,8 +1,10 @@
-import { GetStaticPaths, GetStaticPathsContext, GetStaticProps, GetStaticPropsContext, NextPage } from "next"
+import { GetStaticProps, GetStaticPropsContext, NextPageWithLayout } from "next"
 import NextLink from "../../components/atoms/NextLink"
 import { Pagination, Post } from "../../types"
 import RouteUtil from "../../utils/RouteUtil"
 import posts from "../../data/posts.json"
+import React, { ReactElement } from "react"
+import DefaultLayout from "../../components/organisms/layouts/DefaultLayout"
 
 export type Props = {
   posts: Post[],
@@ -21,7 +23,7 @@ export const getStaticProps: GetStaticProps<Props> = (context: GetStaticPropsCon
   }
 }
 
-const BlogListPage: NextPage<Props> = (props: Props) => {
+const PostListPage: NextPageWithLayout<Props> = (props: Props) => {
   const {
     posts,
     pagination
@@ -29,7 +31,7 @@ const BlogListPage: NextPage<Props> = (props: Props) => {
 
   return (
     <div>
-      <h1>BlogList</h1>
+      <h1>PostList</h1>
       <ul>
         {
           posts.map((post, idx) => (
@@ -46,4 +48,8 @@ const BlogListPage: NextPage<Props> = (props: Props) => {
   )
 }
 
-export default BlogListPage
+PostListPage.getLayout = (page: ReactElement) => {
+  return (<DefaultLayout>{page}</DefaultLayout>)
+}
+
+export default PostListPage

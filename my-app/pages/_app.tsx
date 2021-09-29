@@ -1,12 +1,11 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import DefaultLayout from '../components/organisms/layouts/DefaultLayout'
+import type { AppPropsWithLayout } from 'next/app'
+import { ReactNode } from 'react'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <DefaultLayout>
-      <Component {...pageProps} />
-    </DefaultLayout>
-  )
+
+
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout || ((page: ReactNode) => page)
+  return getLayout(<Component {...pageProps} />)
 }
 export default MyApp
