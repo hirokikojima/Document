@@ -6,7 +6,7 @@ class PostRepository {
   private dataDir: string
   
   constructor() {
-    this.dataDir = path.resolve('./data')
+    this.dataDir = path.resolve('./data/posts')
   }
   
   async getList(): Promise<Post[]> {

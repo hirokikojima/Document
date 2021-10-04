@@ -1,27 +1,26 @@
 import { NextPageWithLayout } from "next"
 import { Post } from "../../../types"
 import ApiClient from "../../../libs/ApiClient"
-import React, { ReactElement, useEffect, useState } from "react"
+import React, { ReactElement, Suspense, useEffect, useState } from "react"
 import AdminLayout from "../../../components/organisms/layouts/AdminLayout"
+import SuspenseResource from "../../../libs/SuspenseResource"
 
 const AdminPostListPage: NextPageWithLayout = () => {
-  const [list, setList] = useState<Post[]>([])
+  const promise = ApiClient
+    .fetchPostList()
+    .then((response) => response.data)
+  const resource = new SuspenseResource(promise).read()
 
-  useEffect(() => {
-    const fetchBlogList = async () => {
-      const response = await ApiClient.fetchPostList()
-      setList(response.data.posts)
-    }
-    fetchBlogList()
-  }, [])
   return (
     <div>
       <h1>Admin/BlogList</h1>
-      <ul>
-        {list.map(item => (
-          <li>{item.heading}</li>
-        ))}
-      </ul>
+      <Suspense fallback={<p>Loading...</p>}>
+        <ul>
+          {resource?.posts.map(item => (
+            <li>{item.heading}</li>
+          ))}
+        </ul>
+      </Suspense>
     </div>
   )
 }
