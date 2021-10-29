@@ -1,4 +1,6 @@
-import '../styles/globals.css'
+import '../styles/reset.min.css'
+import '../styles/_variables.scss'
+import '../styles/globals.scss'
 import type { AppPropsWithLayout } from 'next/app'
 import { ReactNode } from 'react'
 

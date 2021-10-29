@@ -1,0 +1,44 @@
+.Header {
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  opacity: 0.9;
+
+  &-Container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 48px;
+    padding: 0 12px;
+  }
+
+  &-Logo {
+    display: inline-block;
+    margin: auto 0;
+    font-weight: 200;
+  }
+}
+
+.HeaderNav {
+  &-List {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &-ListItem {
+    background-color: var(--bg-color-nav);
+    list-style: none;
+    height: 100%;
+    padding: 16px 12px;
+    font-size: 0.9rem;
+    font-weight: 200;
+
+    &:hover {
+      background-color: var(--bg-color-nav-hover);
+    }
+  }
+}

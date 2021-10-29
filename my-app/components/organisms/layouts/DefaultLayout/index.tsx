@@ -1,7 +1,6 @@
 import React, { FC } from "react"
-import Footer from "../../Footer"
-import Header from "../../Header"
-import Sidebar from "../../Sidebar"
+import Footer from "../../common/Footer"
+import Header from "../../common/Header"
 
 export type Props = {
   children?: React.ReactNode;
@@ -16,7 +15,6 @@ const DefaultLayout: FC<Props> = (props: Props) => {
     <div>
       <Header />
       {children}
-      <Sidebar />
       <Footer />
     </div>
   )

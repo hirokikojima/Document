@@ -1,0 +1,23 @@
+.Top {
+  height: calc(100vh - 48px);
+  padding-top: 48px;
+
+  &-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &-Heading {
+    display: block;
+
+    &-Main {
+      display: block;
+    }
+
+    &-Sub {
+      display: block;
+    }
+  }
+}

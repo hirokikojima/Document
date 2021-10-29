@@ -1,0 +1,15 @@
+.Career {
+  height: 100vh;
+
+  &-Wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &-Container {
+    max-width: 700px;
+    width: 100%;
+  }
+}

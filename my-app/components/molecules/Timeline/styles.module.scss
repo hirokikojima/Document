@@ -1,0 +1,39 @@
+.Timeline {
+  margin-left: 120px;
+  border-left: 4px solid #ccc;
+  list-style: none;
+  
+  &-Item {
+    position: relative;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  
+    &:nth-child(n + 2) {
+      margin-top: 12px;
+    }
+  }
+
+  &-ItemDate {
+    position: absolute;
+    left: -156px;
+  }
+
+  &-ItemCircle {
+    height: 12px;
+    width: 12px;
+    background-color: #f98262;
+    border-radius: 50%;
+    position: absolute;
+    left: -50px;
+    top: 12px;
+  }
+
+  &-ItemHeading {
+    display: block;
+  }
+
+  &-ItemBody {
+
+  }
+}

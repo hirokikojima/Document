@@ -1,0 +1,38 @@
+.Profile {
+  height: 100vh;
+
+  &-Wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &-Container {
+    display: flex;
+    max-width: 700px;
+  }
+
+  &-Icon {
+    background-color: #ccc;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin-right: 24px;
+  }
+
+  &-Contents {
+    
+  }
+
+  &-ContentsHeading {
+    &-Ruby {
+      display: block;
+      font-size: 0.4rem;
+    }
+  }
+
+  &-ContentsText {
+    font-size: 0.9rem;
+  }
+}
