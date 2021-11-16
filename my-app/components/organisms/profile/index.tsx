@@ -1,10 +1,18 @@
-import React, { FC } from 'react'
+import React, { FC, HTMLProps } from 'react'
+import cx from 'classnames'
 import { HeadingMiddle } from '../../atoms/Heading'
 import styles from './styles.module.scss'
 
-const Profile: FC = () => {
+export type Props = HTMLProps<HTMLDivElement>
+
+const Profile: FC<Props> = (props: Props) => {
+  const {
+    className,
+    ...rest
+  } = props
+  
   return (
-    <div className={styles.Profile}>
+    <div className={cx(styles.Profile, className)} {...rest}>
       <div className={styles['Profile-Wrapper']}>
         <div className={styles['Profile-Container']}>
           <img className={styles['Profile-Icon']} src="/vercel.svg" />

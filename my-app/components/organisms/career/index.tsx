@@ -1,21 +1,27 @@
-import React, { FC } from 'react'
+import React, { FC, HTMLProps } from 'react'
+import cx from 'classnames'
 import styles from './styles.module.scss'
-import Timeline, { TimelineItem } from '../../molecules/Timeline'
+import CareerTimeline, { CareerTimelineItem } from './CareerTimeline'
+import { Career as CareerType } from '../../../types'
 
 export type Props = {
-  careerItems: TimelineItem[]
-}
+  careers: CareerType[]
+} & HTMLProps<HTMLDivElement>
 
 const Career: FC<Props> = (props: Props) => {
   const {
-    careerItems
+    className,
+    careers,
+    ...rest
   } = props
   
+  const careerTimelineItems = careers
+
   return (
-    <div className={styles.Career}>
+    <div className={cx(styles.Career, className)} {...rest}>
       <div className={styles['Career-Wrapper']}>
         <div className={styles['Career-Container']}>
-          <Timeline timelineItems={careerItems} />
+          <CareerTimeline careerTimelineItems={careerTimelineItems} />
         </div>
       </div>
     </div>

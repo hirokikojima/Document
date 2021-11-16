@@ -2,11 +2,14 @@
   /* ***** Color Values ***** */
   --color-white: #fff;
   --color-black: #000;
-  --color-gray: #8c8c8c;
+  --color-gray: #ccc;
   --color-gray-dark: #1a1a1a;
   --color-gray-light: #ddd;
   --color-gray-p: #f6f6f6;
   --color-green: #51c300;
+  --color-blue-light: #b0e9ff;
+  --color-blue-sky: #4cc9fa;
+  --color-blue: #0a9fda;
   --color-red: none;
 
   /* ***** Branding ***** */
@@ -23,6 +26,10 @@
   --color-secondary: none;
   --color-accent: none;
   --color-selected: var(--color-gray-p);
+  --color-border: var(--color-gray);
+  --color-skill-junior: var(--color-blue-light);
+  --color-skill-middle: var(--color-blue-sky);
+  --color-skill-senior: var(--color-blue);
 
   /* ***** Background ***** */
   --bg-color-nav: var(--color-white);

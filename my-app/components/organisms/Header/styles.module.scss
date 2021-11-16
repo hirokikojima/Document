@@ -1,8 +1,11 @@
+@import "../../../styles/mixin";
+
 .Header {
   width: 100%;
   position: fixed;
   background-color: #fff;
   opacity: 0.9;
+  z-index: 1;
 
   &-Container {
     display: flex;
@@ -17,6 +20,39 @@
     display: inline-block;
     margin: auto 0;
     font-weight: 200;
+  }
+
+  &-Navigation {
+    &-Pc {
+      display: none;
+
+      @include mq() {
+        display: block;
+      }
+    }
+
+    &-SpToggle {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 1;
+
+      @include mq() {
+        display: none;
+      }
+    }
+
+    &-Sp {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      @include mq() {
+        display: none;
+      }
+    }
   }
 }
 

@@ -1,6 +1,7 @@
-import React, { FC } from "react"
-import Footer from "../../common/Footer"
-import Header from "../../common/Header"
+import React, { FC, useState } from "react"
+import Footer from "../Footer"
+import Header from "../Header"
+import styles from "./styles.module.scss"
 
 export type Props = {
   children?: React.ReactNode;
@@ -10,9 +11,9 @@ const DefaultLayout: FC<Props> = (props: Props) => {
   const {
     children
   } = props
-  
+
   return (
-    <div>
+    <div className={styles.DefaultLayout}>
       <Header />
       {children}
       <Footer />

@@ -1,0 +1,22 @@
+@import "../../../styles/mixin";
+
+.Container {
+  width: 100%;
+  display: block;
+}
+
+.Row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Col {
+  display: block;
+  width: 100%;
+
+  @include mq() {
+    flex-grow: 1;
+    width: auto;
+  }
+}

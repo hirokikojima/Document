@@ -1,9 +1,17 @@
-import React, { FC } from 'react'
+import React, { FC, HTMLProps } from 'react'
+import cx from 'classnames'
 import styles from './styles.module.scss'
 
-const Top: FC = () => {
+export type Props = HTMLProps<HTMLDivElement>
+
+const Top: FC<Props> = (props: Props) => {
+  const {
+    className,
+    ...rest
+  } = props
+
   return (
-    <div className={styles.Top}>
+    <div className={cx(styles.Top, className)} {...rest}>
       <div className={styles['Top-Container']}>
         <h2 className={styles['Top-Heading']}>
           <span className={styles['Top-Heading-Main']}>Hiroki Kojima</span>

@@ -4,7 +4,7 @@ import { Pagination, Post } from "../../types"
 import RouteUtil from "../../utils/RouteUtil"
 import posts from "../../data/posts.json"
 import React, { ReactElement } from "react"
-import DefaultLayout from "../../components/organisms/layouts/DefaultLayout"
+import DefaultLayout from "../../components/organisms/DefaultLayout"
 
 export type Props = {
   posts: Post[],

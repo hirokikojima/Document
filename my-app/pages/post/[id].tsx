@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticPathsContext, GetStaticProps, GetStaticPropsCo
 import { Post } from "../../types"
 import posts from "../../data/posts.json"
 import React, { ReactElement } from "react"
-import DefaultLayout from "../../components/organisms/layouts/DefaultLayout"
+import DefaultLayout from "../../components/organisms/DefaultLayout"
 
 export type Props = {
   post: Post
